@@ -1,0 +1,10 @@
+ <div class="col-sm-3" ng-repeat="rows in instaData">
+          <img ng-src="{{rows.images.standard_resolution.url}}" class=" img-responsive" style="width:100%" alt="Image">
+                <p>
+                           <span ng-class="pull-left"> <i class="glyphicon glyphicon-comment"></i>{{rows.comments.count}}
+                           </span>
+                           <span ng-class="pull-right">
+                            <i class="glyphicon glyphicon-thumbs-up"></i><a href="{{rows.likes.count}}">{{rows.likes.count}}</a>
+                           </span>
+           </p>
+        </div>
