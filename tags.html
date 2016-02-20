@@ -1,0 +1,64 @@
+<div class="container" ng-controller="instagramTagsCtrl">
+  <div class="row">
+    <h2>Search By  Tag</h2>
+    <div id="custom-search-input">
+      <div class="input-group col-md-12">
+        <input type="text" class="  search-query form-control" placeholder="Search" ng-model="searchtag" />
+        <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button" ng-click="searchTag()">
+                                        <span class=" glyphicon glyphicon-search"></span>
+        </button>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+
+		       <div id="loading" ng-show="loading" style="text-align: center;">
+             <p><img src="http://www.ptc.com/images/loading.png" alt="Please Wait..."/></p>
+          </div>
+          
+    <h3  ng-hide="instaData.length == 0"><span ng-include src="'layout-changer.html'"></span></h3>
+    <div class="clearfix"></div>
+    <div ng-show="layout=='grid'">
+      <div class="col-sm-3" ng-repeat="rows in instaData.data">
+        <img ng-src="{{rows.images.standard_resolution.url}}" class=" img-responsive" style="width:100%" alt="Image">
+              <p>
+                           <span ng-class="pull-left"> <i class="glyphicon glyphicon-comment"></i>{{rows.comments.count}}
+                           </span>
+                           <span ng-class="pull-right">
+                            <i class="glyphicon glyphicon-thumbs-up"></i><a href="{{rows.likes.count}}">{{rows.likes.count}}</a>
+                           </span>
+           </p>
+      </div>
+    </div>
+
+    <div ng-show="layout=='list'">
+
+      <div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="rows in instaData.data">
+        <div class="well well-sm">
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <img src="{{rows.images.standard_resolution.url}}" alt="" class="img-rounded img-responsive" />
+
+            </div>
+            <div class="col-sm-6 col-md-8">
+              <h4>{{rows.caption.text}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+{{instaData.pagination.next_url}}
+  </div>
+ <div class="clearfix" ng-show="instaData.length!=0 && instaData.pagination.next_url!=''">
+  <button ng-show="instaData.pagination.next_url!=''" ng-click="searchMore(instaData.pagination.next_url)">LOAD MORE</button>
+</div>
+
+
+
+</div>
