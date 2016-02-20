@@ -1,0 +1,100 @@
+/* Styles go here */
+
+ /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    .navbar .nav{    margin: 5px 10px 0 0; }
+
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+	  background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+    .gridstyle{font-size:14px;}
+    .gridstyle a{color:#000;}
+    .gridstyle .selected{color:#337ab7;}
+    .colborder{border:1px dotted #ccc;}
+    .glyphicon { margin-right:5px; }
+
+/*List view*/
+
+.row{    margin: 10px 0px;}
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+.cursor-pointer{cursor:pointer;}
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+
+.modal{display:block;}
+
+.modal-body ul{}
+.modal-body ul li{list-style:none;}
+
+/*-- Loading--*/
+
+#loading_text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -10px;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+/*-- Search Box--*/
+
+
+
+
+#custom-search-input {
+        margin:0;
+        margin-top: 10px;
+        padding: 0;
+    }
+ 
+    #custom-search-input .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+ 
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        min-height: 30px;
+    }
+ 
+    #custom-search-input button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color:#D9230F;
+    }
+ 
+    .search-query:focus + button {
+        z-index: 3;   
+    }
+
+.seperator-modal{    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px dotted #ccc;}
