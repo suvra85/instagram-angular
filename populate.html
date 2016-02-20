@@ -1,0 +1,16 @@
+<div class="container-fluid  bg-3 text-center" ng-controller="instagramCtrl">
+      <h3>Popular Media  
+             <span ng-include src="'layout-changer.html'"></span>
+
+      </h3>
+      <div class="row" >
+           <div id="loading" ng-show="loading">
+             <p><img src="http://www.ptc.com/images/loading.png" alt="Please Wait..."/></p>
+          </div>
+            
+           <div ng-include src="pageLayout"></div>
+
+      </div>
+
+    
+</div>
