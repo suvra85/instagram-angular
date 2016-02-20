@@ -1,0 +1,50 @@
+<div class="container" ng-controller="instagramUserCtrl">
+
+<div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-sm-3-offset">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{instaData.profile_picture}}" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>{{instaData.full_name}}</h4>
+                        
+                        <p>
+                            <i class="glyphicon glyphicon-user"></i>{{instaData.username}}
+                            <br />
+                            <i class="glyphicon glyphicon-globe"></i><a href="{{instaData.website}}">{{instaData.website}}</a>
+                            <br />
+                            <i class="glyphicon glyphicon-comment"></i>{{instaData.bio}}</p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">{{instaData.counts.media}}</a></li>
+                                <li><a href="#">{{instaData.counts.followed_by}}</a></li>
+                                <li><a href="#">{{instaData.counts.follows}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="row">
+	  
+	   <div class="col-sm-3" ng-repeat="rows in instaDataMedia">
+          <p><img ng-src="{{rows.images.standard_resolution.url}}" class=" img-responsive cursor-pointer" style="width:100%" alt="Image" ng-click="showModal(rows)"></p>
+           <p>
+                           <span ng-class="pull-left"> <i class="glyphicon glyphicon-comment"></i>{{rows.comments.count}}
+                           </span>
+                           <span ng-class="pull-right">
+                            <i class="glyphicon glyphicon-thumbs-up"></i><a href="{{rows.likes.count}}">{{rows.likes.count}}</a>
+                           </span>
+           </p>
+                      
+                      
+    </div>
+
+	  </div>
+</div>	  
