@@ -1,0 +1,12 @@
+<div class="col-xs-12 col-sm-6 col-md-6"  ng-repeat="rows in instaData">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{rows.images.standard_resolution.url}}" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>{{rows.caption.text}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
