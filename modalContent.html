@@ -1,0 +1,34 @@
+<div class="modal-header">
+  <h1>{{item.user.full_name}}</h1>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <p>
+      <img ng-src="{{item.images.standard_resolution.url}}" class=" img-responsive" style="width:100%" alt="Image">
+   
+    <span ng-class="pull-left"> <i class="glyphicon glyphicon-comment"></i>{{item.comments.count}}
+                           </span>
+                           <span ng-class="pull-right">
+                            <i class="glyphicon glyphicon-thumbs-up"></i><a href="{{rows.likes.count}}">{{item.likes.count}}</a>
+                           </span>
+                           
+    </p>
+    <p>
+     <span>{{item.caption.text}}</span> <span>@ <a href="#/view-user/{{item.caption.from.id}}">{{item.caption.from.username}}</a></span> 
+    </p>
+    
+     <div class="col-xs-12 seperator-modal"  ng-repeat="rows in item.comments.data| limitTo:3">
+        <div class="col-xs-3"><img ng-src="{{rows.from.profile_picture}}" class=" img-responsive pull-left" alt="Image">
+        
+        </div>
+        <div class="col-xs-9">{{rows.text}} </div>
+     </div>
+     
+
+  </div>
+  
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
