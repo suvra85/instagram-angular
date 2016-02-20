@@ -1,0 +1,38 @@
+<div class="container" ng-controller="instagramUserCtrl">
+	<div class="row">
+		<h2>Search By  User</h2>
+           <div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="  search-query form-control" placeholder="Search" ng-model="searchuser" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button" ng-click="searchUser()">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+	</div>
+		<div class="row">
+		  
+		       <div id="loading" ng-show="loading" style="text-align: center;">
+             <p><img src="http://www.ptc.com/images/loading.png" alt="Please Wait..."/></p>
+          </div>
+<div class="col-xs-12 col-sm-6 col-md-6"  ng-repeat="rows in instaData">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{rows.profile_picture}}" alt="" class="img-rounded img-responsive" />
+                    
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>{{rows.username}} </h4>
+                          <p><a href="#/view-user/{{rows.id}}"  class="btn btn-warning">View Details</a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</div>
+	
+</div>
